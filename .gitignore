@@ -168,4 +168,8 @@ main.js
 main.ts
 main.map
 
+# TypeScript compile
+*.js
+*.map
+
 # End of https://www.gitignore.io/api/node,linux,macos,windows,visualstudiocode
