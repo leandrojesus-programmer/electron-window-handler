@@ -4,7 +4,10 @@
   "description": "A BrowserWindow handler",
   "main": "app.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "start": "npm run build && electron ."
   },
   "repository": {
     "type": "git",
