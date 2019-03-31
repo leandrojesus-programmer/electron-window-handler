@@ -1,5 +1,6 @@
 import { IWindowHandler } from "./IWindowHandler";
 import { BrowserWindow, BrowserWindowConstructorOptions } from "electron";
+import { stringLiteral } from "@babel/types";
 
 export class WindowHandler implements IWindowHandler {
     
@@ -35,8 +36,17 @@ export class WindowHandler implements IWindowHandler {
         throw new Error("Method not implemented.");
     }
 
-    getBrowserWindow(view: string, id?: number | undefined): BrowserWindow | null {
-        throw new Error("Method not implemented.");
+    getBrowserWindow(view: string, id?: number | undefined): BrowserWindow | null {             
+        const identification: string | number = id ? id : view
+
+        let window: BrowserWindow | null = null;
+        this.browserWindows.forEach(function ([view, browserWindow]) {
+            if (view === identification || browserWindow.id === identification) {
+                window = browserWindow
+            }
+        })
+
+        return window        
     }
 
 }
