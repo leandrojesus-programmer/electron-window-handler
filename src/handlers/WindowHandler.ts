@@ -1,6 +1,5 @@
 import { IWindowHandler } from "./IWindowHandler";
 import { BrowserWindow, BrowserWindowConstructorOptions } from "electron";
-import { stringLiteral } from "@babel/types";
 
 export class WindowHandler implements IWindowHandler {
     
