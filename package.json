@@ -2,7 +2,7 @@
   "name": "electron-window-handler",
   "version": "1.0.0",
   "description": "A BrowserWindow handler",
-  "main": "app.js",
+  "main": "main.js",
   "scripts": {
     "test": "jest",
     "build": "tsc",
