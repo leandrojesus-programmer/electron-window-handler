@@ -24,7 +24,11 @@ export class WindowHandler implements IWindowHandler {
     }
 
     createWindow(view: string, options?: BrowserWindowConstructorOptions | undefined): void {
-        throw new Error("Method not implemented.");
+        const window = new BrowserWindow(options)
+
+        this.browserWindows.push([view, window])
+
+        window.loadFile(view)
     }
 
     deleteWindow(view: string, id?: number | undefined): void {
