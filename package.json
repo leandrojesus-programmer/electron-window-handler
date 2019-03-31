@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/leandrojesus-programmer/electron-window-handler/issues"
   },
-  "homepage": "https://github.com/leandrojesus-programmer/electron-window-handler#readme"
+  "homepage": "https://github.com/leandrojesus-programmer/electron-window-handler#readme",
+  "devDependencies": {
+    "electron": "^4.1.3"
+  }
 }
