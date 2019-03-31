@@ -1,0 +1,26 @@
+{
+  "name": "electron-window-handler",
+  "version": "1.0.0",
+  "description": "A BrowserWindow handler",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leandrojesus-programmer/electron-window-handler.git"
+  },
+  "keywords": [
+    "electron",
+    "browser-window",
+    "browserwindow",
+    "electron-browser-window",
+    "electron-browserwindow"
+  ],
+  "author": "leandrojesus-programmer",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/leandrojesus-programmer/electron-window-handler/issues"
+  },
+  "homepage": "https://github.com/leandrojesus-programmer/electron-window-handler#readme"
+}
