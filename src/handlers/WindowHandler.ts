@@ -25,9 +25,10 @@ export class WindowHandler implements IWindowHandler {
         
         this.browserWindows.forEach(function ([view, browserWindow]) {
             if (view === identification || browserWindow!.id === identification) {
-                
+                browserWindow = null
             }
         })
+        
     }
 
     createWindow(view: string, options?: BrowserWindowConstructorOptions | undefined): void {
