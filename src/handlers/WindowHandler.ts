@@ -4,7 +4,7 @@ import { BrowserWindow, BrowserWindowConstructorOptions } from "electron";
 export class WindowHandler implements IWindowHandler {
     
     VIEW_PATH: string;    
-    browserWindows: [string, BrowserWindow][];
+    browserWindows: [string, BrowserWindow | null][];
 
     constructor(){
         this.VIEW_PATH = ""
@@ -20,7 +20,14 @@ export class WindowHandler implements IWindowHandler {
     }
 
     closeWindow(view: string, id?: number | undefined): void {
-        throw new Error("Method not implemented.");
+        const identification: string | number = id ? id : view
+
+        
+        this.browserWindows.forEach(function ([view, browserWindow]) {
+            if (view === identification || browserWindow.id === identification) {
+                
+            }
+        })
     }
 
     createWindow(view: string, options?: BrowserWindowConstructorOptions | undefined): void {
