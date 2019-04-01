@@ -24,7 +24,7 @@ export class WindowHandler implements IWindowHandler {
 
         
         this.browserWindows.forEach(function ([view, browserWindow]) {
-            if (view === identification || browserWindow.id === identification) {
+            if (view === identification || browserWindow!.id === identification) {
                 
             }
         })
@@ -42,7 +42,7 @@ export class WindowHandler implements IWindowHandler {
         const identification: string | number = id ? id : view
 
         this.browserWindows.forEach(function ([view, browserWindow], index, array) {
-            if (view === identification || browserWindow.id === identification) {
+            if (view === identification || browserWindow!.id === identification) {
                 array.splice(index, 1)
             }
         })
@@ -54,7 +54,7 @@ export class WindowHandler implements IWindowHandler {
 
         let exists = false
         this.browserWindows.forEach(function ([view, browserWindow]) {
-            if (view === identification || browserWindow.id === identification) {
+            if (view === identification || browserWindow!.id === identification) {
                 exists = true
             }
         })
@@ -67,7 +67,7 @@ export class WindowHandler implements IWindowHandler {
 
         let window: BrowserWindow | null = null;
         this.browserWindows.forEach(function ([view, browserWindow]) {
-            if (view === identification || browserWindow.id === identification) {
+            if (view === identification || browserWindow!.id === identification) {
                 window = browserWindow
             }
         })
