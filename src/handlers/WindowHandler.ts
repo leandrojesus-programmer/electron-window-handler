@@ -36,7 +36,16 @@ export class WindowHandler implements IWindowHandler {
     }
 
     browserWindowExist(view: string, id?: number | undefined): boolean {
-        throw new Error("Method not implemented.");
+        const identification: string | number = id ? id : view
+
+        let exists = false
+        this.browserWindows.forEach(function ([view, browserWindow]) {
+            if (view === identification || browserWindow.id === identification) {
+                exists = true
+            }
+        })
+
+        return exists
     }
 
     getBrowserWindow(view: string, id?: number | undefined): BrowserWindow | null {             
