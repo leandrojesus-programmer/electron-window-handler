@@ -6,8 +6,15 @@ export class WindowHandler implements IWindowHandler {
     private VIEW_PATH: string;    
     private browserWindows: [string, BrowserWindow | null][];
 
-    constructor(){
-        this.VIEW_PATH = ""
+    constructor()
+    constructor(viewPath?: string | undefined){  
+        if (!viewPath) {
+            this.VIEW_PATH = "../views/"
+        } 
+        else {
+            this.VIEW_PATH = viewPath
+        }
+
         this.browserWindows = []
     }
 
