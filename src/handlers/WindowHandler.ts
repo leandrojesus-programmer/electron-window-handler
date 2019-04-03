@@ -12,7 +12,13 @@ export class WindowHandler implements IWindowHandler {
     }
 
     showWindow(view: string, id?: number | undefined): void {
-        throw new Error("Method not implemented.");
+        const identification: string | number = id ? id : view
+   
+        this.browserWindows.forEach(function ([view, browserWindow]) {
+            if (view === identification || browserWindow!.id === identification) {
+                browserWindow!.show()
+            }
+        })
     }
 
     hideWindow(view: string, id?: number | undefined): void {
