@@ -3,8 +3,8 @@ import { BrowserWindow, BrowserWindowConstructorOptions } from "electron";
 
 export class WindowHandler implements IWindowHandler {
     
-    VIEW_PATH: string;    
-    browserWindows: [string, BrowserWindow | null][];
+    private VIEW_PATH: string;    
+    private browserWindows: [string, BrowserWindow | null][];
 
     constructor(){
         this.VIEW_PATH = ""
