@@ -34,9 +34,10 @@ export class WindowHandler implements IWindowHandler {
     closeWindow(view: string, id?: number | undefined): void {
         const identification: string | number = id ? id : view
    
-        this.browserWindows.forEach(function ([view, browserWindow]) {
+        this.browserWindows.forEach(([view, browserWindow]) => {
             if (view === identification || browserWindow!.id === identification) {
                 browserWindow!.close()
+                this.deleteWindow(view)
             }
         })
         
