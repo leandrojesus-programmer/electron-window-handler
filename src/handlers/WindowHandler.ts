@@ -25,7 +25,7 @@ export class WindowHandler implements IWindowHandler {
         
         this.browserWindows.forEach(function ([view, browserWindow]) {
             if (view === identification || browserWindow!.id === identification) {
-                browserWindow = null
+                browserWindow!.close()
             }
         })
         
