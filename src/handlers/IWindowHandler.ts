@@ -1,10 +1,6 @@
 import { BrowserWindow, BrowserWindowConstructorOptions } from "electron";
 
 export interface IWindowHandler {
-    // Stores the to views folder
-    VIEW_PATH: string;
-    // Stores BrowserWindows with respective view  
-    browserWindows: [string, BrowserWindow | null][];
     /**
      * Invokes the method .show() from the BrowserWindow which has the specified view
      * or BrowserWindow id
