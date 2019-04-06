@@ -58,6 +58,10 @@ export class WindowHandler implements IWindowHandler {
         window.loadFile(view)
     }
 
+    addChildWindow(parentView: string, childView: string, childOptions?: BrowserWindowConstructorOptions | undefined, parentId?: number | undefined): void {
+        throw new Error("Method not implemented.");
+    }
+
     deleteWindow(view: string, id?: number | undefined): void {
         const identification: string | number = id ? id : view
 
