@@ -59,7 +59,26 @@ export class WindowHandler implements IWindowHandler {
     }
 
     addChildWindow(parentView: string, childView: string, childOptions?: BrowserWindowConstructorOptions | undefined, parentId?: number | undefined): void {
-        throw new Error("Method not implemented.");
+        const parentIdentification: string | number = parentId ? parentId : parentView
+
+        let parentWindow: BrowserWindow | null = this.getBrowserWindow(parentView)
+        if (!parentWindow) {
+            console.error('BrowserWindow with view', parentView, 'doesn\'t exist.');           
+            return
+        }
+
+        let childWindow: BrowserWindow | null = this.getBrowserWindow(parentView)
+        if (!childWindow) {
+            this.createWindow(childView)
+            
+            childWindow = this.getBrowserWindow(childView);
+            childWindow!.setParentWindow(parentWindow)
+        }
+        else if (childWindow)
+        {
+            childWindow!.setParentWindow(parentWindow)
+        }  
+        
     }
 
     deleteWindow(view: string, id?: number | undefined): void {
