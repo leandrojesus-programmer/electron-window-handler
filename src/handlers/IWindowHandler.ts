@@ -29,6 +29,17 @@ export interface IWindowHandler {
      */
     createWindow(view:string,options?:BrowserWindowConstructorOptions): void;
     /**
+     * Wires a already created BrowserWindow with a another BrowserWindow, making a 
+     * parent-child relation. If the child BrowserWindow doesn't exist, it will be 
+     * auto created.
+     * 
+     * @param parentView parent browserwindow view
+     * @param childView child browserwindow view
+     * @param childOptions child browserwindow options 
+     * @param parentId parent browserwindow id 
+     */
+    addChildWindow(parentView:string,childView:string,childOptions?:BrowserWindowConstructorOptions,parentId?:number): void;   
+    /**
      * Removes from browserWindows the BrowserWindow which has the specified view 
      * or BrowserWindow id
      * @param view browserwindow view
