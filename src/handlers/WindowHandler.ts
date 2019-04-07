@@ -69,7 +69,7 @@ export class WindowHandler implements IWindowHandler {
 
         let childWindow: BrowserWindow | null = this.getBrowserWindow(parentView)
         if (!childWindow) {
-            this.createWindow(childView)
+            this.createWindow(childView, childOptions)
             
             childWindow = this.getBrowserWindow(childView);
             childWindow!.setParentWindow(parentWindow)
