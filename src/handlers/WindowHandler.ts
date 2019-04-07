@@ -61,7 +61,7 @@ export class WindowHandler implements IWindowHandler {
     addChildWindow(parentView: string, childView: string, childOptions?: BrowserWindowConstructorOptions | undefined, parentId?: number | undefined): void {
         const parentIdentification: string | number = parentId ? parentId : parentView
 
-        let parentWindow: BrowserWindow | null = this.getBrowserWindow(parentView)
+        let parentWindow: BrowserWindow | null = this.getBrowserWindow(parentIdentification.toString())
         if (!parentWindow) {
             console.error('BrowserWindow with view', parentView, 'doesn\'t exist.');           
             return
